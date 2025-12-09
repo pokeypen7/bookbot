@@ -1,2 +1,2 @@
-# bootdev_book-bot
+# bootdev_bookbot
 First Python Project
