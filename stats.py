@@ -31,7 +31,7 @@ def get_char_key(sorted_list, character = None):
             char = sorted_list[index][char_key]
             char_list.append(char)
         elif character == "Only Alphabet":
-            if ord(sorted_list[index][char_key]) <= 122 and ord(sorted_list[index][char_key]) >= 97 or ord(sorted_list[index][char_key]) >=128 and ord(sorted_list[index][char_key]) <= 319:
+            if ord(sorted_list[index][char_key]) <= 122 and ord(sorted_list[index][char_key]) >= 97 or ord(sorted_list[index][char_key]) >=192 and ord(sorted_list[index][char_key]) <= 383:
                 char = sorted_list[index][char_key]
                 char_list.append(char)
 
