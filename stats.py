@@ -24,33 +24,34 @@ def sort_on(items):
 
 def get_char_key(sorted_list, character = None):
     char_key = "char"
-    char_value = "num"
     char_list = []
     index = 0
     for index in range(0,len(sorted_list)):
-        if character.lower() == None:
+        if character == None:
             char = sorted_list[index][char_key]
             char_list.append(char)
-            return char_list
+        elif character == "Only Alphabet":
+            if ord(sorted_list[index][char_key]) <= 122 and ord(sorted_list[index][char_key]) >= 97 or ord(sorted_list[index][char_key]) >=128 and ord(sorted_list[index][char_key]) <= 319:
+                char = sorted_list[index][char_key]
+                char_list.append(char)
+
         elif sorted_list[index][char_key] == character.lower():
-                return sorted_list[index][char_key]
-        else:
-            print("Can't Find Character")
+            return sorted_list[index][char_key]
+
+    return char_list
 
 def get_char_value(sorted_list, character = None):
     char_key = "char"
     char_value = "num"
-    char_list = []
+    num_list = []
     index = 0
     for index in range(0,len(sorted_list)):
-        if character.lower() == None:
-            char = sorted_list[index][char_value]
-            char_list.append(char)
-            return char_list
+        if character == None:
+            num = sorted_list[index][char_value]
+            num_list.append(num)
         elif sorted_list[index][char_key] == character.lower():
-                return sorted_list[index][char_value]
-        else:
-            print("Can't Find Character")
+            return sorted_list[index][char_value]
+    return num_list
 
 
                 
