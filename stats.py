@@ -10,16 +10,67 @@ def get_num_words(file_string):
     return counted_text
 
 def create_char_dic(file_string):
-    char_ct = {}
+    char_dic = {}
     for char in file_string:
         char_low = char.lower()
-        if char_low not in char_ct:
-            char_ct[char_low] = 0
-            char_ct[char_low] += 1
-    return char_ct
+        if char_low not in char_dic:
+            char_dic[char_low] = 0
+        char_dic[char_low] += 1
+    return char_dic
 
-# def sort_on(items):
-#     return 
-# 
-# def sort_dic(char_dic):
-#     char_dic.sort(reverse=True, key)
+
+def sort_on(items):
+    return items["num"]
+
+def get_char_key(sorted_list, character = None):
+    char_key = "char"
+    char_value = "num"
+    char_list = []
+    index = 0
+    for index in range(0,len(sorted_list)):
+        if character.lower() == None:
+            char = sorted_list[index][char_key]
+            char_list.append(char)
+            return char_list
+        elif sorted_list[index][char_key] == character.lower():
+                return sorted_list[index][char_key]
+        else:
+            print("Can't Find Character")
+
+def get_char_value(sorted_list, character = None):
+    char_key = "char"
+    char_value = "num"
+    char_list = []
+    index = 0
+    for index in range(0,len(sorted_list)):
+        if character.lower() == None:
+            char = sorted_list[index][char_value]
+            char_list.append(char)
+            return char_list
+        elif sorted_list[index][char_key] == character.lower():
+                return sorted_list[index][char_value]
+        else:
+            print("Can't Find Character")
+
+
+                
+
+
+
+
+
+    
+
+
+def sort_dic(char_dic):
+    char_dic_list = []
+    char_key = "char"
+    char_value = "num"
+    for char in char_dic:
+        char_dic_sorted = {}
+        char_ct = char_dic[char]
+        char_dic_sorted[char_key] = char
+        char_dic_sorted[char_value] = char_ct
+        char_dic_list.append(char_dic_sorted)
+    char_dic_list.sort(reverse = True, key = sort_on)
+    return char_dic_list
